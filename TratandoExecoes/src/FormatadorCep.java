@@ -1,7 +1,8 @@
 public class FormatadorCep {
     public static void main(String[] args) {
         try {
-            String cep = FormatarCep("00000000");
+            String cep = FormatarCep("12345678");
+            System.out.println(cep);
             System.out.println("CEP VÁLIDO COM SUCESSO");
         } catch (CepInvalidException e) {
 
