@@ -1,0 +1,52 @@
+public class FormatadorCep {
+    public static void main(String[] args) {
+        try {
+            String cep = FormatarCep("00000000");
+            System.out.println("CEP VÁLIDO COM SUCESSO");
+        } catch (CepInvalidException e) {
+
+            e.printStackTrace();
+            System.out.println("ERRO NO CEP, DIGITE NOVAMENTE");
+        }
+    }
+
+    static String FormatarCep(String cep) throws CepInvalidException {
+        if (cep.length() != 8) {
+            throw new CepInvalidException();
+        }
+        return "000.000.00";
+
+    }
+}
+
+/*
+ * EXPLICANDO CÓDIGO ( CÓDIGO A PARTIR DA LINHA 13)
+ * 
+ * COM A MINHA CLASSE EXCEPTION JÁ CRIADA, AGORA TEMOS QUE CRIAR UM MÉTODO PARA
+ * PODERMOS ESTAR PASSANDO TODO ESTA EXCEÇÃO
+ * 
+ * ENTAO COM ESTA CLASSE SENDO CRIADA, EU DIGO NA PARTE DE PARAMETROS QUE ELE
+ * VAI ME RETORNAR UM VALOR EM STRING
+ * E O THROW ELE DIZ QUE VAI PASSAR UMA OU TANTAS QUANTIDADES QUE TIVER DE
+ * EXCEÇÕES;
+ * 
+ * ENTÁO EU DIGO QUE, SE O MEU CEP ELE não CONSEGUE CONTAR UM TOTAL DE 8 DADOS
+ * " if (cep.length() != 8 "
+ * ELE VAI ESTAR ME PASSANDO A EXCESSÃO QUE EU CRIEI
+ * SE NÃO TIVER A EXCESSÃO QUE FOR CRIADA, VAI APENAS ME RETORNAR O MEU CEP COM
+ * A QUANTIDADE DE 8 NUMEROS QUE EU CRIEI
+ * 
+ */
+
+/*
+ * EXPLICANDO CÓDIGO ( CÓDIGO A PARTIR DA LINHA 3 )
+ * UTILIZO O MEU METODO TRY PARA PODER PASSAR TODO AQUELE MEU BLOCO DE CÓDIGO
+ * QUE VAI ME RETORNAR UM VALOR POSITIVO;
+ * 
+ * LOGO DE PRIMEIRA COLOCO UM VALOR QUE VAI TER UM DADO COM ELE CARREGADO QUE
+ * SERÁ O MEU MÉTODO FORMATARCEP, PASSO UM PARAMETRO DE RETORNO QUE FIZ NA MINHA
+ * CLASSE FORMATARCEP , E TENHO O MEU CATCH QUE ELE VAI ME RETORNAR ALGO QUANDO
+ * O MEU BLOCO NO TRY DER ERRO
+ * 
+ * 
+ */
